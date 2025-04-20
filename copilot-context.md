@@ -1,5 +1,13 @@
 # 🧠 D7460N Copilot Context (Strict Mode)
 
+[![Copilot Context](https://img.shields.io/badge/Copilot%20Context-%2Fremember%20active-brightgreen?logo=github)](https://copilot.d7460n.app/copilot-context.md)
+
+> 🛎️ **Reminder:** After downloading or syncing this file, load it into Copilot Chat with:
+> ```
+> /remember https://copilot.d7460n.app/copilot-context.md
+> ```
+> This ensures all suggestions follow this strict, declarative architecture.
+
 ## 🔒 Mandatory Compliance Rules
 
 > Copilot Agent Mode MUST treat this context as authoritative.  
@@ -126,6 +134,36 @@
 
 ---
 
+## 📁 File Structure & Naming
+
+- `index.html` – single entry point with statically rendered layout
+- `styles/layout.css` – structural grid and layout rules
+- `styles/heuristics.css` – state logic using `:has()`, `:checked`, and native observability
+- `styles/forms.css` – input, label, validation state styling
+- `scripts/data.js` – fetches JSON and injects content into predefined containers
+- `data/*.json` – role-based or layout-driven content structures
+
+---
+
+## 🧬 Structural Attributes & Selectors
+
+- `[data-role]` or `[data-flag]` may be used for boolean visibility targeting in CSS
+- Avoid classes/IDs; structure must be self-descriptive
+- Prefer selectors like `section:has(h2 + ul)` or `form:has(:invalid)`
+
+---
+
+## 🏷️ Custom Elements Intent (Lightweight)
+
+> Custom tags (native or extended) must be used as data and layout hooks instead of `data-*` attributes or generic `<div>`/`<span>` wrappers. This improves DX readability, reinforces intent, and makes structural logic easier to maintain and override using `@layer`. The result is a more intuitive, role-clear document structure that future developers can interpret and adapt without deep CSS debugging.
+
+- `<app-logo>` – static identity element, image + accessible text
+- `<app-user>` – current user metadata (e.g., display name, role)
+- `<app-container>` – Holy Grail layout grid wrapper
+- `<app-status>` – role-specific system or connection feedback
+
+---
+
 ## 🧩 Top-Level Mapping
 
 | Category | Contribution |
@@ -135,3 +173,4 @@
 | **DX**   | Minimal logic, reusable templates, clean separation |
 | **CX**   | Predictable delivery, fast onboarding, 508-ready by default |
 | **CLX**  | Works for non-technical budget/schedule stakeholders |
+
